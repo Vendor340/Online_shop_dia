@@ -1,0 +1,41 @@
+{%extends "index.html"%}
+<!DOCTYPE html>
+<html lang="en">
+{%block head %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/user.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet"> 
+</head>
+{% endblock head %}
+<body>
+
+	{%block nav%}{%endblock%}
+	{%block content%}
+	<h1 id = "username_a">{{username}}</h1>
+	<h3 id = "bought_products">Bought products</h3>
+	<hr style="color:rgba(0, 0, 0, 0.2);">
+	{% if history|length > 0 %}
+		
+			
+			{% for i in history%}
+			<div id=item_details>
+				<ul >
+					<li><span id="description">Name:</span><span id="info">{{i.get('name')}}</span></li>
+					<li><span id="description">ID:</span><span id="info">{{i.get('_id')}}</span></li>
+					<li><span id="description">Price:</span><span id='info'>{{i.get('cost')}}</span></li>
+					<li><span id="description">Count:</span><span id="info">{{i.get('count')}}</span></li>
+				</ul>
+			</div>
+			{% endfor %}
+			
+		
+	{% endif %}
+	{%endblock%}
+	
+</body>
+</html>

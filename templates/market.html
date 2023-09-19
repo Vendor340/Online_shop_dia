@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=	, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/market.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Mukta&display=swap" rel="stylesheet"> 
+	<title>Market</title>
+</head>
+<body>
+	<nav>
+		<ul id="navigate">
+			<li style="margin-left:40px"><a href="{{url_for('get_start')}}" target="_blank">HOME</a></li>
+			<li style="margin-left:100px"><a href="{{url_for('get_to_market')}}" target="_blank">MARKET</a></li>
+			<li id="login"><span><a href="{{url_for('login_page')}}" target="_blank">LOGIN</a></span></li>
+			<li id="register"><span><a href="{{url_for('register')}}">REGISTER</a></span></li>
+			<li >
+				<a  href="{{url_for('get_info_user_about')}}">
+					<button id="user">
+						<img src="{{url_for('static', filename='images/user.png')}}"  width='40px' height='40px'>
+					</button>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<div>
+		<aside id="market">
+			<table >
+				<thead>
+					<tr>
+						<th>NAME</th>
+						<th>ID</th>
+						<th>COST</th>
+						<th>COUNT</th>
+						<th>CONTENT TYPE</th>
+						<th>Add</th>
+					</tr>
+				</thead>
+				<tbody id = "market_source">
+					{%for i in market%}
+					<tr>
+						<td>{{i.get('name')}}</td>
+						<td>{{i.get('_id')}}</td>
+						<td>{{i.get('cost')}}</td>
+						<td><form>
+							<button type="submit"id=send_value><input type="number" name='count'min="1" max="{{i.get('count')}}" value="{{i.get('count')}}"></button>
+						</form></td>
+						<td>{{i.get('content_type')}}</td>
+						<td><form><button type="submit" name="Buy" value="{{i.get('_id')}}" formmethod="POST" id="Add_to_cart">Add to cart</button></form></td>
+
+					</tr>
+					{%endfor%}
+				</tbody>
+			</table>
+		</aside>
+			
+		<aside id="sidebar">
+			<h3 id="filter_header">Filter</h3>
+			<ul id="filter_options">
+				<li><form method="POST">
+					<button id="filter_text" name="Filter" value="all">all</button>
+				</form></li>
+				{% for i in filters%}
+				<li><form method="POST"><button name="Filter" id="filter_text" value="{{i}}">{{i}}</button></form></li>
+				{% endfor%}
+			</ul>
+			<form>
+				<span style="color:#b4bd00;margin-left: 30px;">Search &#128269: </span><input type="text" formmethod="post" placeholder="search" name="Search" >
+				<button type="Search" formmethod="POST">Search</button>
+			</form>
+			
+		</aside>
+	</div>
+	<footer>
+	</footer>
+</body>
+</html>

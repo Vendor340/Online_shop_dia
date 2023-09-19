@@ -1,0 +1,98 @@
+body{
+	background-color:#13152e;
+}
+#login{
+	display:block;
+	width:60%;
+	height:60%;
+	position: fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	background-color:#222438;
+	border-radius: 20px;
+	text-align: center;
+}
+#header{
+	font-family: 'Ysabeau SC', sans-serif;
+	font-size: 30px;
+
+	text-align: center;
+	background: -webkit-linear-gradient(#37f01f, #d4f01f);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+}	
+
+input{
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#151821;
+	border:2px solid #80838c;
+	border-radius: 30px;
+	margin-right:30px;
+	color:#c6c8cf;
+}
+input::placeholder{
+	color:#80838c;
+}
+#Cancel{
+	background:-webkit-linear-gradient(#cf2219, #8a2520);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #a83227;
+	border-radius:40px;
+	margin-top:40px;
+}
+#Submit{
+	background:-webkit-linear-gradient(#14cc14, #359635);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #2aa32a;
+	border-radius:40px;
+	margin-left:50px;
+	margin-top:40px;
+
+}
+#Cancel:active{
+	background: -webkit-linear-gradient(#941616, #731a1a);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #731a1a;
+	transform:translateY(3px);
+}
+#Submit:active{
+	background: -webkit-linear-gradient(#20631f, #1c451c);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	transform:translateY(3px);
+	border-radius:40px;
+	border:2px solid #1c451c;
+}
+
+#Go_back{
+	display:block;
+	background: -webkit-linear-gradient(#003fd4, #0098d4);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #0023d4;
+	border-radius:40px;
+	margin: 20px auto;
+}
+#Go_back:active{
+	background: -webkit-linear-gradient(#102382, #0c1852);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #0c1852;
+	border-radius:40px;
+	transform:translateY(3px);
+}
+#go_back_link{
+	text-decoration: none;
+	
+}
+#Go_back:hover{
+	border:2px solid #0d1640;
+	cursor:pointer;
+}
+
+	

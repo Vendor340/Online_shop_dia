@@ -1,0 +1,39 @@
+body{
+	font-family: 'Nanum Gothic', sans-serif;
+	background-color:#131526;
+}
+#username_a{
+	text-align:center;
+	background:-webkit-linear-gradient(#eb346b, #18f0c5);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+}
+#item_details{
+		display:flex;
+
+		justify-content: center;
+		border: 2px solid #c9e307;
+		width:20%;
+		margin:20px auto ;
+
+}
+#items_details ul, li{
+	list-style-type: ">>> ";
+	color:#0ee307;
+}
+#description{
+		background: -webkit-linear-gradient(45deg, #0ee307, #07dce3);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+}
+#info{
+		background:-webkit-linear-gradient(45deg, #07dce3, #e38407);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+}
+#bought_products{
+		text-align:center;
+		background:-webkit-linear-gradient(270deg, transparent, #1c737a, #b2cc0a);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+}

@@ -1,0 +1,96 @@
+body{
+	font-family: 'AsapCondensed', sans-serif;
+	background-color:#101626;
+}
+#main_block{
+		display: block;
+		justify-content: center;
+		width:50vw;
+		height:50vh;
+		position: fixed;
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		border-radius: 40px;
+		background-color:#181933;
+}
+#main_block h1{
+	text-align:center;
+	background:-webkit-linear-gradient(#c42c1b, #641bc4);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+}
+input{
+		display:block;
+		margin-right:auto;
+		margin-left:auto;
+		color:#c0c0c4;
+		background-color: #12121f;
+		margin-top:20px;
+		border-radius: 30px;
+		border-color:transparent;
+}
+input:placeholder{
+		color:#9b9b9e;
+}
+#Cancel{
+
+	background:-webkit-linear-gradient(#d41919, #851e1b);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	margin-left: 40%;
+	margin-right: 35px;
+	border-radius: 40px;
+	border: 2px solid #851e1b;
+}
+#Cancel:active{
+	background:-webkit-linear-gradient(#7a1616, #520e0e);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #691c1c;
+	transform: translateY(3px);
+}
+#Submit{
+	background:-webkit-linear-gradient(#28c710, #2a9e18);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border-radius: 30px;
+	border:2px solid #36a326;
+}
+#Submit:active{
+	background:-webkit-linear-gradient(#238515, #1f7013);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border-radius: 30px;
+	border: 2px solid #1f5e16;
+	transform:translateY(3px);
+}
+#Cancel, #Submit{
+	margin-top:30px;
+}
+
+#Go_back{
+	display:block;
+	background: -webkit-linear-gradient(#003fd4, #0098d4);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #0023d4;
+	border-radius:40px;
+	margin: 20px auto;
+}
+#Go_back:active{
+	background: -webkit-linear-gradient(#102382, #0c1852);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	border:2px solid #0c1852;
+	border-radius:40px;
+	transform:translateY(3px);
+}
+#go_back_link{
+	text-decoration: none;
+	
+}
+#Go_back:hover{
+	border:2px solid #0d1640;
+	cursor:pointer;
+}

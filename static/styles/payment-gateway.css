@@ -1,0 +1,30 @@
+body{
+	background-color: #101424;
+}
+#payment-title{
+		text-align:center;
+		background: -webkit-linear-gradient(#14a819, #1914a8);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+}
+#payment-form{
+	display:block;
+	text-align: center;
+	margin:auto;
+	width:50%;
+}
+#submit_payment{
+		margin-top:20px;
+		width:27ch;
+		background: -webkit-linear-gradient(#20871c, #15bf0f);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+		border-radius:30px;
+		font-size:15px;
+}
+#error-message{
+		text-align:center;
+		margin-top:30px;
+		font-size:20px;
+		color: #df1b41;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
+</head>
+<body>
+	
+	<div id="login">
+		<h3 id="header"><strong>LOGIN</strong></h3>
+		<form method="post">
+
+			<input type="text" placeholder="Username" name="username">
+			<input type="password" placeholder="password" name="password"><br>
+			<button id="Cancel" type="reset">Reset</button>
+			<button id = "Submit" type="submit">Submit</button>
+		</form>
+		<a href="{{url_for('get_start')}}" id="go_back_link"><button id="Go_back">Go back to home page</button></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+FROM python:3.9-slim-buster
+COPY ./main.py python-app/Scripts/
+COPY . python-app/Scripts/
+WORKDIR python-app/Scripts/
+RUN pip install -r bot_requirements.txt
+
+EXPOSE 80
+CMD "python -u main.py"

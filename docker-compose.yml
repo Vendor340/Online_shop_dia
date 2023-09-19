@@ -1,0 +1,49 @@
+version: "3"
+services:
+  flask:
+    build:
+      dockerfile: Dockerfile
+
+    env_file:
+      - config.env
+    command: python -u run_app.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/python_app/source
+    links:
+      - mongo
+  mongo:
+      image: mongo:latest
+      ports:
+        - "27017:27017"
+      env_file:
+        - config.env
+      volumes:
+        - /python_app/source/data
+  redis:
+    image: bitnami/redis:latest
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=redisnode
+    volumes:
+      - /path/to/certs:/opt/bitnami/redis/certs
+      - .:/python_app/redis_data/data
+  bot:
+    build:
+      context: app
+      dockerfile: Dockerfile_bot
+    env_file:
+      - app/conf.env
+    command: python -u main.py
+    ports:
+      - "80:80"
+    volumes:
+      - .:/python_app/Scripts
+    links:
+      - redis
+      - mongo
+
+
+

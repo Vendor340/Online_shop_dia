@@ -1,0 +1,95 @@
+<!Doctype html>
+<html>
+{%block head %}
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width:device-width, initial-scale:1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant&family=Ysabeau+Office:ital,wght@1,300&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet"> 
+</head>
+{% endblock head %}
+<body>
+    {%block nav%}
+    <nav id = "navigate">
+        <ul>
+            <li ><a  href="{{url_for('get_start')}}" ><strong>HOME</strong></a></li>
+            <li><a target="_blank" href="{{ url_for('get_to_market') }}"><strong>MARKET</strong></a></li>
+            {%if cookies.get("username") and cookies.get("password")%}
+            <form action="{{url_for('log_out')}}" method="POST" style="display:inline;">
+            <button type="submit" id="send_log_out">LOGOUT</button>
+            </form>
+            {%else%}
+            <a href="{{url_for('login_page')}}" ><strong id = "login">LOGIN</strong></a>
+            {%endif%}
+            <a href="{{url_for('register')}}" ><strong id="register">REGISTER</strong></a>
+            <button class=users_icon>
+                <a href="{{url_for('get_info_user_about')}}" target="_blank"><img src="{{url_for('static', filename='images/user.png')}}" width=40px></a>
+            </button>
+        </ul>
+    </nav>
+    {%endblock%}
+    {%block content%}
+    <div>
+        <h1 id='username'>{{ username }}</h1>
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>ID</th>
+                    <th>COST</th>
+                    <th>COUNT</th>
+                    <th>PRODUCT TYPE</th>
+
+                </tr>
+        </thead>
+            <tbody>
+                {%for i in cart%}
+                <tr>
+                    <td>{{i.get('name')}}</td>
+                    <td>{{i.get('_id')}}</td>
+                    <td>{{i.get('cost')}}</td>
+                    <td>{{i.get('count')}}</td>
+
+                    <td>{{i.get('content_type')}}</td>
+                    <td>
+                        <form method="POST">
+                            <button formmethod="POST" id="delete_button" name="Delete" value="{{i.get('_id')}}">Delete from cart</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+            
+        </table>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <form  method="POST">
+                            <button name="Buy", value="True" id="buy_product">Buy product</button>
+                        </form>
+                    </td>
+                    <td><h2 id ="total_price">Total price: <span id="total_price_number">{{total_cost}}$</span></h2></td>
+                </tr>
+            </table>
+            
+            
+        
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    {%endblock content%}
+<script type="text/javascript">
+</script>
+</body>
+</html>

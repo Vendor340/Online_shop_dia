@@ -1,0 +1,45 @@
+
+{% extends "admin.html"%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{%block title%}Users{%endblock%}
+	{%block head%}
+	{{super()}}
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/users.css')}}">
+	{%endblock%}
+</head>
+<body>
+	{%block nav%} 
+		{{super()}}
+		
+	{% endblock %} 
+	{%block content%}
+	<table>
+		<thead style="height:15%">
+			<tr id="theader">
+				<td>id</td>
+				<td>name</td>
+				<td>password</td>
+			</tr>
+		</thead>
+		<tbody style ="height:85%">
+			{% for user in users %}
+
+			<tr id="user_data">
+				<td>{{user.get("_id")}}</td>
+				<td>{{user.get("name")}}</td>
+				<td>{{user.get("password")}}</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table> 
+	<form method="POST" id="form">
+			<label id="input_info">Name:</label><input type="text" name="username" placeholder="name" ><br>	
+			<label id="input_info">Password:</label><input type="text" name="password" placeholder="password" ><br>
+			<button type="submit" name="add" value="True" id="button">Add User</button>
+			<button type="submit" name="del" value="True" id="button">Delete User</button>
+	</form>
+	{%endblock%}
+</body>
+</html>

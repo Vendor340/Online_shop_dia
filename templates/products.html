@@ -1,0 +1,51 @@
+{% extends "admin.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	{%block title%}Products{%endblock%}
+	{%block head%}
+		{{super()}}
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/styles/products.css')}}">
+	{%endblock%}
+</head>
+<body>
+	{%block nav%}
+		{{super()}}
+	{%endblock%}
+	{%block content%}
+		<table id= 'table_info'>
+			<thead>
+				<tr>
+					<th>NAME</th>
+					<th>ID</th>
+					<th>COST</th>
+					<th>COUNT</th>
+					<th>PRODUCT TYPE</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in products%}
+				<tr>
+					<td>{{i.get('name')}}</td>
+					<td>{{i.get('_id')}}</td>
+					<td>{{i.get('cost')}}</td>
+					<td>{{i.get('count')}}</td>
+					<td>{{i.get('content_type')}}</td>
+				</tr>
+				{%endfor%}
+			</tbody>
+			
+		</table>
+		<form method='POST' id="form">
+			<label>Name:</label><input type='text' name='Product_name' placeholder='name'><br>
+			<label>Cost:</label><input type='text' name='Product_cost' placeholder='cost'><br>
+			<label>Count:</label><input type='number' name='Product_count' value='1'><br>
+			<label>Product type:</label><input placeholder="content type" type="text" name="Product_type"><br>
+			<input type='submit' name='Add', value='Add product' id="buttons">
+			<input type='submit' name='Del', value='Delete product' id="buttons">
+		</form>
+
+	{%endblock%}
+</body>
+</html>

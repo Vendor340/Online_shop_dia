@@ -1,0 +1,42 @@
+#table_info{
+	text-align:center;
+	border:transparent;
+	margin-top: 20px;
+	width:100%;
+	height:50vh;
+}
+#table_info thead{
+	height:25%;
+	background-color: #1c2129;
+	color:#d1ae11;
+}
+#table_info tbody{
+		height:75%;
+		background-color: #151b29;
+		color:#943e23;
+}
+#form{
+		margin-top: 20px;
+		text-align: center;
+		background-color: #121324;
+		width:500px;
+		height:300px;
+		display:block;
+		margin-right: auto;
+		margin-left:auto;
+		border-radius: 30px;
+}
+#form label{
+		background: -webkit-linear-gradient(#121324, #186e1c);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+}
+#form input{
+	margin-top:30px;
+}
+#buttons{
+		background-color: #9e8a19;
+		color:#9e1934;
+		border-radius: 30px;
+		border-color:#856115;
+}

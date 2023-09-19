@@ -1,0 +1,97 @@
+body{
+	background-color: #171a45;
+	font-family:'Arvo', sans-serif ;
+}
+#navigate{
+	list-style-type: none;
+	font-size: 20px;
+	font-family: 'Mukta', sans-serif;
+	width:95vw;
+	height:7vh;
+	background-color: #101226;
+	border-radius: 30px;
+}
+#navigate li {
+		display: inline;
+}
+a{
+	color:#c1c1c7;
+	text-decoration:none;
+}
+a:hover{
+	color:#099c13;
+}
+#login{
+	margin-left:60vw;
+	margin-right:10px;
+	color:#101447;
+}
+#register{
+	margin-right:10px;
+	color:#101447;
+}
+#sidebar{
+	border-radius: 30px;
+	height:80vh;
+	width:25vw;
+	display: block;
+	background-color: #070d1c;
+}
+#user{
+	background-color:transparent;
+	border-radius: 30px;
+	border-color: transparent;
+}
+#user:hover{
+	border: 2px solid #ab1207;
+}
+#filter_header{
+	text-align: center;
+	color:#38435c;
+}
+#filter_options{
+	color:#bd5500;
+}
+#market{
+	display:block;
+	float: right;
+	text-align:center;
+	margin-right: 100px;
+}
+#market table{
+		width:100%;
+}
+#market thead{
+	text-align:center;
+	color:#130e99;
+	background-color: #0e2329;
+}
+#market_source  {
+	text-align:center;
+	color:#31990e;
+	background-color: #0e2916;
+}
+#filter_text{
+	background-color: transparent;
+	border: transparent;
+	color:#4903fc;
+}
+#filter_text:active{
+	color:#28fc03;
+}
+#Add_to_cart{
+		background:-webkit-linear-gradient(#0dd9ad, #0c7a63);
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+		border-radius:30px;
+		border:2px dashed #247a0c;
+}
+#count_product{
+		background:transparent;
+		border:transparent; 
+		color:#0d0a0a;
+}
+#send_value{
+		background-color:transparent;
+		border:transparent;
+}
